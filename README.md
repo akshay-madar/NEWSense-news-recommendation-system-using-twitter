@@ -80,4 +80,8 @@ To reduce dimension for easy visualization, multi-dimensional scaling is perform
 <p align="center">
   <img width="212" height="256" src="https://media.giphy.com/media/StAnQV9TUCuys/giphy.gif">
   <img width="212" height="256" src="https://media.giphy.com/media/4p1JhLCYEOEJa/giphy.gif">
+  <img width="212" height="256" src="https://media.giphy.com/media/AHbVovGXkjkic/giphy.gif">
+  <img width="212" height="256" src="https://media.giphy.com/media/11CD1W0njRgJFK/giphy.gif">
 </p>
+
+Using **TextBlob**, the sentiment property returns a namedtuple of the form Sentiment(polarity, subjectivity). The polarity score is a float within the range [-1.0, 1.0]. The subjectivity is a float within the range [0.0, 1.0] where 0.0 is very objective and 1.0 is very subjective.
