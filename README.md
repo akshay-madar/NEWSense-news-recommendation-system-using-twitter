@@ -19,9 +19,18 @@ This system can be very helpful to Online News Providers to target right news ar
 </p>
 
 ### Statistics:
-* Twitter has *145 million monetizable* daily active users
+* Twitter has 145 million monetizable daily active users
 * 44% of U.S. 18- to 24-year-olds use Twitter
 * 71% of Americans on Twitter are using it to read news.
 
 ### How Twitter can be used?
 Based on user’s tweets we can know user’s interests and can recommend personalized news articles which user would share on Twitter. This can increase news articles and news service’s popularity.
+
+## Fetch twitter data for users
+As a first step, the engine identifies readers with similar news interests based on their behavior of retweeting articles posted on Twitter. (Library : Tweepy)
+
+The flow of collecting active users’ data:
+  - 1. Fetch users who retweet given News handle's tweets - New York Times, Washington Post and Wall Street Journal. We identify them as  active news readers.
+  - 2. Calculate popularity Index = followers count / friends count
+  - 3. Filter users based on their twitter activity and popularity (tweets > 10 and popularity > 1)
+  - 4. Collect information from Twitter profiles of these filtered active users
