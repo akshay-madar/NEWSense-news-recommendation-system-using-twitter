@@ -60,9 +60,24 @@ The tweets can't be analyzed right away since they contain URLs, Usernames, non-
 ```
 
 ## Clustering users according to their interests:
-To cluster users based on similarity of interests, we perform TF-IDF vectorizing using **sklearn**.
+To cluster users based on similarity of interests, we perform TF-IDF vectorizing using **sklearn**. The formula that is used to compute the tf-idf for a term t of a document d in a document set is, 
+* tf-idf(t, d) = tf(t, d) * idf(t)
+* idf(d, t) = log [ (1 + n) / (1 + df(d, t)) ] + 1.
 * Term Frequency: This summarizes how often a given word appears within a document.
 * Inverse Document Frequency: This downscales words that appear a lot across documents.
-![f1]
-![f2]
-[f1]: http://chart.apis.google.com/chart?cht=tx&chl={\displaystyle f_{t,d}{\Bigg /}{\sum _{t'\in d}{f_{t',d}}}}
+
+This is followed by K-means clustering on the calculated tf-idf matrix. To reduce the dimension of Tf-Idf matrix we define the following:
+
+dist = 1 - cosine_similarity(tfidf_matrix)
+cosine similarity = (dot product of two vectors) / (product of vectors’ magnitudes)
+
+Cosine similarity is a metric used to measure how similar the documents are irrespective of their size. Mathematically, it measures the cosine of the angle between two vectors projected in a multi-dimensional space. The cosine similarity is advantageous because even if the two similar documents are far apart by the Euclidean distance (due to the size of the document), chances are they may still be oriented closer together. The smaller the angle, higher the cosine similarity.
+
+To reduce dimension for easy visualization, multi-dimensional scaling is performed using **sklearn.manifold.MDS**.
+[!vis](https://github.com/akshay-madar/NEWSense-news-recommendation-system-using-twitter/blob/master/twitter/clusterVis.PNG)
+
+## Sentiment Analysis and Topic Modeling:
+<p align="center">
+  <img width="212" height="256" src="https://media.giphy.com/media/StAnQV9TUCuys/giphy.gif">
+  <img width="212" height="256" src="https://media.giphy.com/media/4p1JhLCYEOEJa/giphy.gif">
+</p>
