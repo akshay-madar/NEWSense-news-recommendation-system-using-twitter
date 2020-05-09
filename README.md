@@ -1,7 +1,7 @@
 # NEWSense - A personalized news article recommendation system
 
 <p align="center">
-  <img width="560" height="300" src="https://github.com/akshay-madar/NEWSense-news-recommendation-system-using-twitter/blob/master/NEWSenseLogo.png">
+  <img width="300" height="100" src="https://github.com/akshay-madar/NEWSense-news-recommendation-system-using-twitter/blob/master/NEWSenseLogo.png">
 </p>
 
 ## Motivation:
