@@ -13,7 +13,6 @@ To build a hybrid-filtering personalized news articles recommendation product wh
 This system can be very helpful to Online News Providers to target right news articles to right users.
 
 ## But why Twiiter?
-
 <p align="center">
   <img width="400" height="400" src="https://media.giphy.com/media/10zI52A8mrfwNG/giphy.gif">
 </p>
@@ -26,11 +25,18 @@ This system can be very helpful to Online News Providers to target right news ar
 ### How Twitter can be used?
 Based on user’s tweets we can know user’s interests and can recommend personalized news articles which user would share on Twitter. This can increase news articles and news service’s popularity.
 
-## Fetch twitter data for users
-As a first step, the engine identifies readers with similar news interests based on their behavior of retweeting articles posted on Twitter. (Library : Tweepy)
+## Fetch twitter data for users:
+As a first step, the engine identifies readers with similar news interests based on their behavior of retweeting articles posted on Twitter. **Tweepy** is used to scrape the twitter.
 
-The flow of collecting active users’ data:
-  - 1. Fetch users who retweet given News handle's tweets - New York Times, Washington Post and Wall Street Journal. We identify them as  active news readers.
-  - 2. Calculate popularity Index = followers count / friends count
-  - 3. Filter users based on their twitter activity and popularity (tweets > 10 and popularity > 1)
-  - 4. Collect information from Twitter profiles of these filtered active users
+The flow is as follows:
+  1. Fetch users who retweet given News handle's tweets - New York Times, Washington Post and Wall Street Journal. We identify them as  active news readers.
+  2. Calculate popularity Index = followers count / friends count
+  3. Filter users based on their twitter activity and popularity (tweets > 10 and popularity > 1)
+  4. Collect information from Twitter profiles of these filtered active users
+
+## Data-preprocessing:
+The tweets can't be analyzed right away since they contain URLs, Usernames, non-english words, punctuations and numbers. Sometimes whole tweets are in different languages. Hence, **NLTK** is used to pre-process and clean the tweets.
+* Cleaning - removing hyperlinks, usernames, RT, case conversion, removing punctuations and stop words in English
+* Tokenization - it divides a string into substrings by splitting on the specified string (defined in subclasses).
+* Stemming - producing morphological variants of a root/base word
+* Lemmatization - grouping together the different inflected forms of a word so they can be analysed as a single item. Lemmatization is similar to stemming but it brings context to the words
