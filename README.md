@@ -75,7 +75,7 @@ Cosine similarity is a metric used to measure how similar the documents are irre
 
 To reduce dimension for easy visualization, multi-dimensional scaling is performed using **sklearn.manifold.MDS**.
 <p align="center">
-  <img width="500" height="400" src="https://github.com/akshay-madar/NEWSense-news-recommendation-system-using-twitter/blob/master/twitter/clusterVis.PNG">
+  <img width="800" height="400" src="https://github.com/akshay-madar/NEWSense-news-recommendation-system-using-twitter/blob/master/twitter/clusterVis.PNG">
 </p>
 
 ## Sentiment Analysis and Topic Modeling:
