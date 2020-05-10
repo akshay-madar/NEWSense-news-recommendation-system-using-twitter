@@ -87,3 +87,16 @@ To reduce dimension for easy visualization, multi-dimensional scaling is perform
 </p>
 
 Using **TextBlob**, the sentiment property returns a namedtuple of the form Sentiment(polarity, subjectivity). The polarity score is a float within the range [-1.0, 1.0]. The subjectivity is a float within the range [0.0, 1.0] where 0.0 is very objective and 1.0 is very subjective.
+
+For **Topic Modeling**, LDA is performed. Tuning of number of topics for each cluster accomplished using the coherence measure from *gensim.models.coherencemodel*.
+
+## Collect and Analyze News Articles:
+**Newspaper3k** is used to scrape news websites. The model becomes robust because many different topics are collected. Newspaper is a Python3 library! Newspaper has seamless language extraction and detection. If no language is specified, Newspaper will attempt to auto detect a language.
+```
+cnn_paper = newspaper.build('https://www.wsj.com/') #CNN paper
+WP_paper = newspaper.build('https://www.washingtonpost.com',language='en') # WP paper 
+NYT_paper = newspaper.build('https://www.nytimes.com',language='en') # NYT paper
+```
+The same workflow is repeated on this scraped data - pre-processing/cleaning, tokenization, sentiment analysis, lda.
+
+## Recommending news articles to twitter users:
